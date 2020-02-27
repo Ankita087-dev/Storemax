@@ -1,4 +1,4 @@
-FROM node:8 as builder
+FROM node:8
 
 WORKDIR /usr/src/app
 
@@ -8,9 +8,8 @@ RUN npm install
 
 RUN npm run build
 
-WORKDIR /usr/src/app/www
+WORKDIR /usr/src/app
 
 EXPOSE 3000
 
-FROM 
-
+CMD ["node", "app.js"]
